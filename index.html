@@ -1,0 +1,44 @@
+---
+layout: default
+title: Tantrums For Change
+---
+<script src="{{ site.baseurl }}/assets/js/script.js"></script>
+<header>
+	<div class="container">
+		<div class="column">
+			<div>
+				<h1 class="editable">Still throwing a tantrum!</h1>
+				<p class="editable">Trump tweeted a total of <b>{{ site.data.data.tweet_total }}</b> times last week. <b>{{ site.data.data.all_caps }}</b> of which were all caps.</p>
+				<p1 class="editable">Last updated: {{ site.data.data.update_time }}</p1>
+			</div>
+		</div>
+		<div class="column">
+			<img src="{{ site.baseurl }}/assets/images/donnie.png">
+		</div>
+	</div>
+</header>
+
+<div class="container">
+	<div class="columns">
+		<div>
+			<h1 class="editable" id="total">${{ site.data.data.tweet_total }}.00</h1>
+		</div>
+		<div>
+			<p class="editable">Price per tweet:</p>
+			<select class="dropbtn" id="prices" onchange="changePrice({{ site.data.data.tweet_total }})">
+				<option value="100" selected="selected">$1</option>
+				<option value="25">25¢</option>
+				<option value="10">10¢</option>
+				<option value="5">5¢</option>
+				<option value="1">1¢</option>
+			</select>
+		</div>
+	</div>
+</div>
+
+<!-- <div class="container" id="donate">
+	<h2 class="editable">Make a donation</h2>
+	<div class="donate">
+		{{ site.donation_embed }}
+	</div>
+</div> -->
