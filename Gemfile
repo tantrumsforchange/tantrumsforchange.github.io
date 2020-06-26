@@ -1,8 +1,6 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
 
-gem 'jekyll', '3.7.4'
+source "https://rubygems.org"
 
-group :jekyll_plugins do
-  gem 'jekyll-seo-tag', '2.4.0'
-  gem 'jekyll-sitemap', '1.2.0'
-end
+gemspec
+

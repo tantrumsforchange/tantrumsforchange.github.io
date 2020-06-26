@@ -1,61 +1,9 @@
-<!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+---
+layout: base
+---
 
-		{% seo %}
+<div class="intro-header"></div>
 
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
-		<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/screen.css">
-		<link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/apple-touch-icon.png">
-		<link rel="icon" type="image/png" href="{{ site.baseurl }}/favicon.png" sizes="32x32">
-
-		{% if jekyll.environment == 'production' and site.google_analytics_key != '' %}
-			<script>
-				window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-				ga('create', '{{ site.google_analytics_key }}', 'auto');
-				ga('send', 'pageview');
-			</script>
-			<script async src='https://www.google-analytics.com/analytics.js'></script>
-		{% endif %}
-	</head>
-	<body>
-		<nav>
-			<div class="container">
-				<a href="{{ site.baseurl }}">{% include tantrums_logo.html %}</a>
-			</div>
-		</nav>
-		<div class="content">
-			{{ content }}
-		</div>
-		<footer>
-			<div class="container">
-
-				<div class="contact">
-					<p class="email">
-						<a href="mailto:{{ site.data.company.email }}">
-							{% include icons/social-media.html social_icon="email" %} {{ site.data.company.email }}
-						</a>
-					</p>
-					<p class="twitter">
-						<a href="https://twitter.com/{{ site.data.company.twitter }}">
-							{% include icons/social-media.html social_icon="twitter" %} {{ site.data.company.twitter }}
-						</a>
-					</p>
-				</div>
-
-			</div>
-		</footer>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-		<script type="text/javascript">
-			$('a[href*=\\#]').on('click', function(event){
-				var el = $(this.hash);
-				if (el.length > 0) {
-					event.preventDefault();
-					$('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
-				}
-			});
-		</script>
-	</body>
-</html>
+<div role="main" class="container-md">
+  {{ content }}
+</div>

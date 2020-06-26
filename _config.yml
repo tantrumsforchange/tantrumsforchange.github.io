@@ -1,71 +1,89 @@
-# ----
-# Site
+# --- Basic options --- #
 
+# Name of website
 title: Tantrums For Change
-url: https://tantrumsforchange.org
-baseurl:
-google_analytics_key:
 
-# Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
-logo: /siteicon.png
-description: Turning Trump's twitter tantrums into literal change.
-author:
-  name:
-  email: dev@tantrumsforchange.org
+# Short description of your site
+# description: Turning Trump's Twitter tantrums into something useful.
+
+# Your name to show in the footer
+author: Tantrums For Change
+
+# --- List of links in the navigation bar --- #
+
+navbar-links:
+  About Us: "about"
+  Previous Weeks: "previous"
+
+# --- Footer options --- #
+
+# Select the social network links that you want to show in the footer.
+# Uncomment the links you want to show and add your information to each one.
+# If you don't want to show a link to an RSS feed, set rss to "false".
+social-network-links:
+  email: "donations@tantrumsforchange.org"
   twitter: tantrums4change
 
-# -----
-# Build
+# --- General options --- #
 
-collections:
-  staff_members:
-    _icon: account_circle
-    _hide_content: true
-    _options:
-      image:
-        width: 250
-        height: 250
+# How to display the link to your website in the footer
+# Remove this if you don't want a link in the footer
+url-pretty: "TantrumsForChange.org"
 
-permalink: pretty
+# --- Colours / background image --- #
 
+# Personalize the colors in your website. Colour values can be any valid CSS colour
+
+navbar-col: "#F5F5F5"
+navbar-text-col: "#404040"
+navbar-border-col: "#EAEAEA"
+page-col: "#FFFFFF"
+link-col: "#008AFF"
+hover-col: "#0085A1"
+footer-col: "#F5F5F5"
+footer-text-col: "#777777"
+footer-link-col: "#404040"
+
+# --- Web Statistics Section --- #
+
+# Fill in your Google Analytics gtag.js ID to track your website using gtag
+gtag: "UA-170818272-1"
+
+# Fill in your Google Analytics ID to track your website using GA
+google_analytics: "170818272"
+
+# Google Tag Manager ID
+#gtm: ""
+
+# --- Misc --- #
+
+markdown: kramdown
+highlighter: rouge
+permalink: /:year-:month-:day-:title/
+paginate: 5
+
+kramdown:
+  input: GFM
+
+# Default YAML values (more information on Jekyll's site)
 defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      _options:
-        content:
-          width: 1880
-          height: 1880
-          uploads_dir: "/images/posts/"
   -
     scope:
       path: ""
     values:
       layout: "default"
 
-donation_embed: '<script src="https://donorbox.org/widget.js" type="text/javascript"></script><iframe src="https://donorbox.org/embed/give-sheep-the-vote?hide_donation_meter=true" height="685px" width="100%" style="max-width:425px; min-width:310px" seamless="seamless" id="dbox-form-embed" name="donorbox" frameborder="0" scrolling="no"></iframe>'
-newsletter_action: "//your-mailchimp-action-url.com"
-
-plugins:
-  - jekyll-sitemap
-  - jekyll-seo-tag
-
+# Exclude these files from production site
 exclude:
+  - CHANGELOG.md
+  - CNAME
   - Gemfile
   - Gemfile.lock
+  - LICENSE
   - README.md
-  - LICENCE
+  - screenshot.png
+  - docs/
 
-# -----------
-# CloudCannon
-
-_options:
-  header_background_image:
-    width: 1880
-    height: 1880
-  newsletter_background_image:
-    width: 1880
-    height: 1880
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
