@@ -1028,6 +1028,10 @@ pre {
   margin: 1rem;
 }
 
+.subcard {
+  margin-top: auto;
+}
+
 /* .row > .card:hover {
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2);
 } */
