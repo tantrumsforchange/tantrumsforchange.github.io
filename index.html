@@ -1,67 +1,75 @@
 ---
 layout: page
-title: Still throwing a tantrum
+title: Turn Trump’s useless tweets into something good
+subtitle: We track and calculate the price per tweet. You turn it into real change.
 use-site-title: true
 ---
 
 <div class="container">
-    <div class="left">
+    <div class="left gray-box">
         <div>
             <p>Trump tweeted a total of <b>{{ site.data.data.tweet_total }}</b> times last week.
-                <b>{{ site.data.data.all_caps }}</b> of which were all caps.</p>
+                <b>{{ site.data.data.all_caps }}</b> were in all caps.</p>
             <p><small>Last updated: {{ site.data.data.update_time }}</small></p>
         </div>
     </div>
-    <div class="right">
+    <div class="right card">
         <img src="{{ site.baseurl }}/assets/img/donnie.png">
     </div>
 </div>
 <div class="container">
-    <div class="column">
-        <h1 class="total" id="total">${{ site.data.data.tweet_total }}.00</h1>
+    <div class="left card">
+        <h2 class="total" id="total">${{ site.data.data.tweet_total }}.00</h2>
+        <h4>Total</h4>
     </div>
-    <div class="column">
-        <h5>Price per tweet:</h5>
-        <select class="dropbtn" id="prices" onchange="changePrice({{ site.data.data.tweet_total }}, {{ site.data.data.all_caps }})">
-            <option value="100" selected="selected">$1</option>
-            <option value="25">25¢</option>
-            <option value="10">10¢</option>
-            <option value="5">5¢</option>
-            <option value="1">1¢</option>
-        </select>
-        <h6 style="padding-top:20px;">Extra for all caps:</h6>
-        <select class="dropbtn" id="caps" onchange="changePrice({{ site.data.data.tweet_total }}, {{ site.data.data.all_caps }})">
-            <option value="100">$1</option>
-            <option value="25">25¢</option>
-            <option value="10">10¢</option>
-            <option value="5">5¢</option>
-            <option value="1">1¢</option>
-            <option value="0" selected="selected">0</option>
-        </select>
+    <div class="right gray-box">
+        <div>
+            <h3>How much change does that make?</h3>
+            <div class="selection-group">
+                <h6 class="selection-title title1">Price per tweet:</h6>
+                <select class="dropbtn1" id="prices"
+                    onchange="changePrice({{ site.data.data.tweet_total }}, {{ site.data.data.all_caps }})">
+                    <option value="100" selected="selected">$1</option>
+                    <option value="25">25¢</option>
+                    <option value="10">10¢</option>
+                    <option value="5">5¢</option>
+                    <option value="1">1¢</option>
+                </select>
+                <h6 class="selection-title title2">All caps bonus:</h6>
+                <select class="dropbtn2" id="caps"
+                    onchange="changePrice({{ site.data.data.tweet_total }}, {{ site.data.data.all_caps }})">
+                    <option value="100">$1</option>
+                    <option value="25">25¢</option>
+                    <option value="10">10¢</option>
+                    <option value="5">5¢</option>
+                    <option value="1">1¢</option>
+                    <option value="0" selected="selected">0</option>
+                </select>
+            </div>
+        </div>
     </div>
 </div>
 
+<div class="title">
+    <h1>Donate your change</h1>
+</div>
+
 <div class="row">
-    <div class="col-4">
+    <div class="card">
         <h2>
             Black Lives Matter
         </h2>
         <p>
-            An organized movement advocating for non-violent civil disobedience in protest against incidents of police brutality against African-American people.
-        </p>
-        <p>
             <a class="btn" href="https://blacklivesmatter.com/about/">More details »</a>
         </p>
-            <button type="button" class="donate-btn" onclick="donate('BLM')">
-				Donate ${{ site.data.data.tweet_total }}.00
-			</button>
+        <button type="button" class="donate-btn" onclick="donate('BLM')">
+            Donate ${{ site.data.data.tweet_total }}.00
+        </button>
     </div>
-    <div class="col-4">
+    <div class="card">
         <h2>
             ACLU
         </h2>
-        <p>
-            A nonprofit organization founded in 1920 "to defend and preserve the individual rights and liberties guaranteed to every person in this country by the Constitution and laws of the United States".        </p>
         <p>
             <a class="btn" href="https://www.aclu.org/about/aclu-history">More details »</a>
         </p>
@@ -69,12 +77,11 @@ use-site-title: true
             Donate ${{ site.data.data.tweet_total }}.00
         </button>
     </div>
-    <div class="col-4">
-        <h2>
-            Other
-        </h2>
+    <div class="card">
         <p>
-            Organization not listed? <a href="mailto:{{ site.social-network-links.email }}?subject=Request for Organization Addition">Send us an email.</a>
+            Organization not listed? <a
+                href="mailto:{{ site.social-network-links.email }}?subject=Request for Organization Addition">Send us an
+                email.</a>
         </p>
     </div>
 </div>
