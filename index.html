@@ -5,7 +5,7 @@ subtitle: We track and calculate the price per tweet. You turn it into real chan
 use-site-title: true
 ---
 
-<div class="container">
+<div class="top container">
     <div class="left gray-box">
         <div>
             <p>Trump tweeted a total of <b>{{ site.data.data.tweet_total }}</b> times last week.
@@ -17,14 +17,14 @@ use-site-title: true
         <img src="{{ site.baseurl }}/assets/img/donnie.png">
     </div>
 </div>
-<div class="container">
+<div class="bottom container">
     <div class="left card">
         <h2 class="total" id="total">${{ site.data.data.tweet_total }}.00</h2>
         <h4>Total</h4>
     </div>
     <div class="right gray-box">
         <div>
-            <h3>How much change does that make?</h3>
+            <h3 class="selection-group-title">How much change does that make?</h3>
             <div class="selection-group">
                 <h6 class="selection-title title1">Price per tweet:</h6>
                 <select class="dropbtn1" id="prices"

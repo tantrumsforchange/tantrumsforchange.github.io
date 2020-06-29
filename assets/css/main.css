@@ -663,7 +663,8 @@ footer .footer-custom-content {
 .header-section.has-img .intro-header.no-img {
   display: none;
 }
-@media (max-width: 365px) {
+
+@media screen and (max-width: 600px) {
   .header-section.has-img .intro-header.no-img {
     display: block;
   }
@@ -677,6 +678,23 @@ footer .footer-custom-content {
   }
   .header-section.has-img .big-img {
     margin-bottom: 0;
+  }
+  .intro-header .page-heading h1 {
+    font-size: 2rem;
+  }
+  .intro-header .page-heading .page-subheading,
+  .intro-header .post-heading .post-subheading {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  h2{
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+  h6 {
+    font-size: 1rem;
   }
 }
 @media (max-width: 325px) {
@@ -920,6 +938,7 @@ pre {
 	padding: 50px 30px;
 	box-sizing: border-box;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .column {
@@ -930,84 +949,9 @@ pre {
 }
 
 .row {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
-}
-
-@media (min-width: 576px) {
-  .row {
-    margin-right: -15px;
-    margin-left: -15px;
-  }
-}
-
-@media (min-width: 768px) {
-  .row {
-    margin-right: -15px;
-    margin-left: -15px;
-  }
-}
-
-@media (min-width: 992px) {
-  .row {
-    margin-right: -15px;
-    margin-left: -15px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .row {
-    margin-right: -15px;
-    margin-left: -15px;
-  }
-}
-
-.col-4 {
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 33.333333%;
-      -ms-flex: 0 0 33.333333%;
-          flex: 0 0 33.333333%;
-  max-width: 33.333333%;
-  position: relative;
-  width: 100%;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-@media (min-width: 576px) {
-  .col-4 {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-}
-
-@media (min-width: 768px) {
-  .col-4 {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-}
-
-@media (min-width: 992px) {
-  .col-4 {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .col-4 {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
+  flex-wrap: wrap;
+  margin: auto -15px;
 }
 
 @media screen and (max-width: 600px) {
@@ -1017,8 +961,8 @@ pre {
 }
 
 .card {
-  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-  padding: 20px;
+  box-shadow: 0 .5rem 1rem 0 rgba(0,0,0,0.2);
+  padding: 1.5rem;
   margin: auto;
   flex: 30%;
   text-align: center;
@@ -1063,21 +1007,53 @@ pre {
   margin-left: -2rem;
 }
 
+@media screen and (max-width: 600px) {
+
+  .top.container {
+    flex-direction: column-reverse;
+    margin-top: 3rem;
+  }
+
+  .card {
+    flex: 100%;
+  }
+  
+  .right.gray-box{
+    padding: 4rem 2rem 2rem;
+    margin: 0;
+    flex: 100%;
+  }
+  .left.gray-box {
+    padding: 2rem 2rem 1rem;
+    margin: 0;
+    flex: 100%;
+  }
+
+  .right.card {
+    margin: -2rem 1rem;
+  }
+
+  .left.card {
+    margin: 2rem 1rem -2rem;
+  }
+
+}
+
 .selection-group {
   margin-top: 2rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: .5rem .5rem;
+  gap: 1rem .5rem;
   grid-template-areas: "title1 dropbtn1" "title2 dropbtn2";
 }
 
 .title1 { 
-  grid-area: title1; 
+  grid-area: title1;
 }
 
 .title2 { 
-  grid-area: title2; 
+  grid-area: title2;
 }
 
 .dropbtn1 { 
@@ -1088,6 +1064,20 @@ pre {
 .dropbtn2 { 
   grid-area: dropbtn2; 
   margin-right: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .title1, .title2{ 
+    text-align: center;
+  }
+
+  .dropbtn1, .dropbtn2{ 
+    margin: 0 auto;
+  }
+
+  .selection-group-title {
+    text-align: center;
+  }
 }
 
 .selection-title {
