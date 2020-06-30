@@ -55,6 +55,9 @@ function donate(site) {
   case 'ACLU':
     url = "https://secure.actblue.com/donate/american-civil-liberties-union--aclu--1?amount=";
     break;
+  case 'T4C':
+    url = alert("Thanks for giving us all your money! JK, I haven't set this up yet.");
+    return;
   }
   window.open(url + totalPrice);
 }
