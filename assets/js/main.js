@@ -29,6 +29,7 @@ function setTotal(total){
 }
 
 function changePrice(tweets, caps) {
+  updateCopyText("Click to copy")
   var priceID = document.getElementById("prices");
   var priceVal = priceID.options[priceID.selectedIndex].value;
 
@@ -50,14 +51,31 @@ function donate(site) {
   var url;
   switch(site){
     case 'BLM':
-    url = "https://secure.actblue.com/donate/ms_blm_homepage_2019?amount=";
+    url = "https://secure.actblue.com/donate/ms_blm_homepage_2019?amount=" + totalPrice;
     break;
   case 'ACLU':
-    url = "https://secure.actblue.com/donate/american-civil-liberties-union--aclu--1?amount=";
+    url = "https://secure.actblue.com/donate/american-civil-liberties-union--aclu--1?amount=" + totalPrice;
     break;
   case 'T4C':
     url = alert("Thanks for giving us all your money! JK, I haven't set this up yet.");
     return;
   }
-  window.open(url + totalPrice);
+  window.open(url);
+}
+
+function copyTotal() {
+  var copyhelper = document.createElement("input");
+  copyhelper.className = 'copyhelper'
+  document.body.appendChild(copyhelper);
+  copyhelper.value = totalPrice;
+  copyhelper.select();
+  document.execCommand("copy");
+  document.body.removeChild(copyhelper);
+
+  updateCopyText("Copied!");
+
+};
+
+function updateCopyText(text) {
+  document.getElementById("click-copy").textContent = text;
 }

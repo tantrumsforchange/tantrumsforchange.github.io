@@ -11,8 +11,8 @@ use-site-title: true
             <p>Trump tweeted a total of <b>{{ site.data.data.tweet_total }}</b> times last week.
                 <b>{{ site.data.data.all_caps }}</b> were in all caps.</p>
             <p><small>Updated every Sunday
-                <br>
-                Last update: <b>{{ site.data.data.update_time }}</b></small></p>
+                    <br>
+                    Last update: <b>{{ site.data.data.update_time }}</b></small></p>
         </div>
     </div>
     <div class="right card">
@@ -20,9 +20,10 @@ use-site-title: true
     </div>
 </div>
 <div class="bottom container">
-    <div class="left card">
+    <div class="left card" onclick="copyTotal()">
         <h2 class="total" id="total">${{ site.data.data.tweet_total }}.00</h2>
         <h4>Total</h4>
+        <p class="click-copy" id="click-copy">Click to copy</p>
     </div>
     <div class="right gray-box">
         <div>
@@ -83,18 +84,19 @@ use-site-title: true
             </button>
         </div>
     </div>
-    <div class="card">
+    <!-- <div class="card">
         <h2>
             Not Sure?
         </h2>
         <div class="subcard">
-            <p>Want to contribute but can't decide? We'll pool together all donations we receive and split them between the charities listed.
+            <p>Want to contribute but can't decide? We'll pool together all donations we receive and split them between
+                the charities listed.
             </p>
             <button type="button" class="donate-btn" onclick="donate('T4C')">
                 Donate ${{ site.data.data.tweet_total }}.00
             </button>
         </div>
-    </div>
+    </div> -->
     <div class="other card">
         <p>
             Organization not listed? <a
@@ -103,3 +105,9 @@ use-site-title: true
         </p>
     </div>
 </div>
+
+<!-- <div class="twitter-stream">
+    <a class="twitter-timeline" data-width="300" data-height="500"
+        href="https://twitter.com/Tantrums4Change?ref_src=twsrc%5Etfw">Tweets by Tantrums4Change</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div> -->

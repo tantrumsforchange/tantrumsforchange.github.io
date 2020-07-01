@@ -961,6 +961,8 @@ pre {
 }
 
 .card {
+  transition: 0.1s;
+  border-radius: .5rem;
   box-shadow: 0 .5rem 1rem 0 rgba(0,0,0,0.2);
   padding: 1.5rem;
   margin: auto;
@@ -988,6 +990,12 @@ pre {
 .left.card {
   padding: 2rem 0;
   margin: auto;
+  user-select: none
+}
+
+.left.card:hover {
+  box-shadow: 0 1rem 1.5rem 0 rgba(0,0,0,0.2);
+  padding: 2.1rem 0;
 }
 
 .gray-box{
@@ -995,6 +1003,7 @@ pre {
   margin: 0;
   background-color: #eee;
   flex: 70%;
+  border-radius: .5rem;
 }
 
 .left.gray-box{
@@ -1087,4 +1096,19 @@ pre {
 .title {
   text-align: center;
   margin: 3rem auto 2rem;
+}
+
+.twitter-stream {
+  margin: 5rem auto 2rem;
+  position: relative;
+  display: flex;
+}
+
+.twitter-timeline {
+  margin: auto;
+}
+
+.click-copy {
+  font-size: 1rem;
+  margin: -.5rem;
 }
